@@ -130,7 +130,7 @@ const App = () => {
         <Edit label="Sepia" value={sepia} onChange={setSepia} />
 
         {/* Reset all button */}
-        <button onClick={()=>
+        <button className="reset-btn" onClick={()=>
           {
            if(confirm("Do you want ot Reset ?") == true)
            {
