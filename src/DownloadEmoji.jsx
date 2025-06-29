@@ -1,22 +1,29 @@
-// DownloadButton.jsx
-import React from "react";
-import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image-more";
 import "./DownloadEmoji.css"
 
-const DownloadButton = ({ targetRef, filename = "emoji-art.png" }) => {
-  const handleDownload = () => {
-    if (!targetRef?.current) return;
-    html2canvas(targetRef.current).then((canvas) => {
+
+const DownloadButton = ({ targetRef }) => {
+  const downloadImage = async () => {
+    // Wait a short delay to ensure fonts and styles are rendered
+    await new Promise((res) => setTimeout(res, 100));
+
+    domtoimage.toPng(targetRef.current, {
+      cacheBust: true, // clear previous rendering cache
+      style: {
+        // Ensure filter styles are applied even if not inline
+        filter: getComputedStyle(targetRef.current).filter
+      }
+    })
+    .then((dataUrl) => {
       const link = document.createElement("a");
-      link.download = filename;
-      link.href = canvas.toDataURL("image/png");
+      link.download = "emoji.png";
+      link.href = dataUrl;
       link.click();
-    });
+    })
+    .catch((err) => console.error("Image generation failed", err));
   };
 
-  return (
-     <div onClick={handleDownload}  className="download-btn">Download</div>
-  );
+  return <button className="download-btn" onClick={downloadImage}>Download</button>;
 };
 
 export default DownloadButton;
