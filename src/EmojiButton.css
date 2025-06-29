@@ -1,0 +1,14 @@
+.emojis
+{
+    width:fit-content;
+    border:2px solid black;
+    font-size:25px;
+    border-radius:10px;
+    text-align:center;
+    border:2px solid #6366f1;
+    cursor:pointer;
+}
+.emojis:hover
+{
+    background-color:gray;
+}

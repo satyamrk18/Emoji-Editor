@@ -1,0 +1,15 @@
+.download-btn
+{ 
+  position:fixed;
+  z-index:1;
+  top:10px;
+  right:25px;
+  border:2px solid #6366f1;
+  padding:10px;
+  border-radius:20px;
+  font-size:16px;
+  font-weight:600;
+  background-color: #d8d9f998;
+  color:#6365f1de;
+  cursor: pointer;
+}
