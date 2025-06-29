@@ -27,8 +27,8 @@ span {
   color: #6366f1;
 }
 .main-emoji {
-  height: 180px;
-  width: 180px;
+  height:auto;
+  width:fit-content;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;

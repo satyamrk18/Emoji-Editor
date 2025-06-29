@@ -37,7 +37,7 @@ const App = () => {
         <div
           ref={captureRef}
           style={{
-            fontSize: `${range}px`,
+            fontSize: `${range *2}px`,
             fontFamily: "'Rubik Moonrocks', cursive",
             transform: `rotate(${rotation * 3.6}deg)`,
             filter: `
@@ -53,7 +53,7 @@ const App = () => {
           
           }}
         >
-          <span>{emoji}</span>
+          <span >{emoji}</span>
         </div>
       </div>
 
