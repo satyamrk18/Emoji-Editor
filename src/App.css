@@ -22,7 +22,9 @@
 }
 .main-emoji {
   height: auto;
-  width: fit-content;
+  width:fit-content;
+  min-width:200px;
+  min-height:200px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
@@ -32,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align:center;
 }
 .emojis-container {
   height: auto;
