@@ -5,7 +5,7 @@ import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 const App = () => {
-  const [emoji, setEmoji] = useState("");
+  const [emoji, setEmoji] = useState("❤️‍🔥");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -81,7 +81,7 @@ const App = () => {
       </div>
 
       <div className="main-emoji">
-        <div
+        <div 
           ref={captureRef}
           style={{
             fontSize: `${range * 2}px`,
@@ -109,7 +109,7 @@ const App = () => {
                 position:"absolute",
                 top: `${10 + i * 10}px`,
                 left: `0px`,
-                fontSize: "0.5em",
+                fontSize: "45px",
                 zIndex: 2,
               }}
             >
@@ -158,7 +158,8 @@ const App = () => {
           type="text"
           name="add-more"
           id="addMoreEmoji"
-          placeholder="Enter Emooji"
+          placeholder="Enter Emoji or text"
+          value={newEmoji}
           onChange={(e) => {
             setNewEmoji(e.target.value);
           }}
