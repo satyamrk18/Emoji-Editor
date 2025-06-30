@@ -68,13 +68,12 @@ const App = () => {
     "📷",
     "🎤",
   ];
-
   return (
     <div className="container">
       <div className="gradient-background" />
       <div className="content">
-        <h1 className="heading">
-          Emoji Editor by using <span>React</span>
+        <h1 className="heading typewriter">
+          Add Your Favarate <span>Emoji</span> To <span>Edit</span>
         </h1>
       </div>
 

@@ -18,22 +18,52 @@
   position: relative;
   z-index: 1;
   text-align: center;
+  margin: 25px auto;
 }
 .heading {
-  color: gray;
-  padding-top: 50px;
+  font-family:sans-serif;
+  font-size:40px;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
 }
-span {
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 1.5px solid black;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+span
+{
   color: #6366f1;
 }
 .main-emoji {
-  height:auto;
-  width:fit-content;
+  height: auto;
+  width: fit-content;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
   position: relative;
-  margin:50px auto;
+  margin: 50px auto;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -41,26 +71,26 @@ span {
 }
 .emojis-container {
   height: auto;
-  min-width:500px;
-  width:500px;
+  min-width: 500px;
+  width: 500px;
   background-color: #6365f161;
   border: 2px solid #6366f1;
   border-radius: 15px;
-  position:relative;
+  position: relative;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   gap: 10px;
-  margin:auto;
-  bottom:0px;
-  padding:10px;
+  margin: auto;
+  bottom: 0px;
+  padding: 10px;
 }
 
 .range {
   height: auto;
-  width:400px;
+  width: 400px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
@@ -74,24 +104,22 @@ span {
   font-size: 18px;
   flex-wrap: wrap;
   left: 0px;
-  top:15px;
+  top: 15px;
 }
-.reset-btn
-{
-  width:120px;
-  border:2px solid #6366f1;
-  padding:10px;
-  border-radius:20px;
-  font-size:18px;
-  font-weight:600;
+.reset-btn {
+  width: 120px;
+  border: 2px solid #6366f1;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
   background-color: #d8d9f998;
-  color:#6365f1de;
+  color: #6365f1de;
   cursor: pointer;
-  margin-bottom:10px;
-  transition: all ease-in-out 0.1s ;
+  margin-bottom: 10px;
+  transition: all ease-in-out 0.1s;
 }
-.reset-btn:hover
-{
+.reset-btn:hover {
   background-color: #6366f1;
-  color:white;
+  color: white;
 }
