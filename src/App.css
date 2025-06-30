@@ -20,42 +20,6 @@
   text-align: center;
   margin: 25px auto;
 }
-.heading {
-  font-family:sans-serif;
-  font-size:40px;
-  white-space: nowrap;
-  overflow: hidden;
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-}
-
-.typewriter {
-  display: inline-block;
-  overflow: hidden;
-  border-right: 1.5px solid black;
-  white-space: nowrap;
-  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 30ch;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-span
-{
-  color: #6366f1;
-}
 .main-emoji {
   height: auto;
   width: fit-content;
@@ -103,8 +67,21 @@ span
   flex-direction: row;
   font-size: 18px;
   flex-wrap: wrap;
-  left: 0px;
+  left: 10px;
   top: 15px;
+}
+.download
+{
+   height: auto;
+   min-width:fit-content;
+ width:fit-content;
+  position: relative;
+  z-index: 1;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
 }
 .reset-btn {
   width: 120px;
@@ -122,4 +99,23 @@ span
 .reset-btn:hover {
   background-color: #6366f1;
   color: white;
+}
+.add-more-content
+{
+  height:90vh;
+  width: 400px;
+  background-color: #d8d9f998;
+  border: 1px solid #6366f1;
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 18px;
+  flex-wrap: wrap;
+  right:10px;
+  top:30px;
 }

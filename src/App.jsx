@@ -3,9 +3,9 @@ import { useRef, useState } from "react";
 import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
-
+import Heading from "./Heading.jsx"
 const App = () => {
-  const [emoji, setEmoji] = useState("❤️‍🔥");
+  const [emoji, setEmoji] = useState("❤️‍🔥");;
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -67,14 +67,13 @@ const App = () => {
     "🎹",
     "📷",
     "🎤",
+    "😤",
   ];
   return (
     <div className="container">
       <div className="gradient-background" />
       <div className="content">
-        <h1 className="heading typewriter">
-          Add Your Favarate <span>Emoji</span> To <span>Edit</span>
-        </h1>
+       <Heading />
       </div>
 
       <div className="main-emoji">
@@ -99,6 +98,7 @@ const App = () => {
           <span>{emoji}</span>
         </div>
       </div>
+      <div className="download"> <DownloadButton targetRef={captureRef} /></div>
 
       <div className="range">
         <Edit label="Size" value={range} onChange={setRange} />
@@ -129,13 +129,17 @@ const App = () => {
         </button>
       </div>
 
+      <div className="add-more-content">
+
+      </div>
+
       <div className="emojis-container">
         {emojis.map((e, i) => (
           <Emoji key={i} emoji={e} setEmoji={setEmoji} />
         ))}
       </div>
 
-      <DownloadButton targetRef={captureRef} />
+     
     </div>
   );
 };
