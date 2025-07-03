@@ -6,7 +6,6 @@ import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import AddMoreEdit from "./AddMoreEdit.jsx";
 import Footer from "./Footer.jsx";
-
 const App = () => {
   const [emoji, setEmoji] = useState("");
   const [range, setRange] = useState(50);
@@ -26,25 +25,59 @@ const App = () => {
 
   const captureRef = useRef();
 
- const emojis = [
-  // Aesthetic / Magical
-  "🪄", "🔮", "🧿", "🪬", "🧚", "🧝", "🦄",
+  const emojis = [
+    // Aesthetic / Magical
+    "🪄",
+    "🔮",
+    "🧿",
+    "🪬",
+    "🧚",
+    "🧝",
+    "🦄",
 
-  // Weird / Nerdy / Fun
-  "🦷", "🫀", "🧠", "🧬", "🪙", "🛸", "🧪",
+    // Weird / Nerdy / Fun
+    "🦷",
+    "🫀",
+    "🧠",
+    "🧬",
+    "🪙",
+    "🛸",
+    "🧪",
 
-  // Techie / Futuristic
-  "🦾", "❤️‍🔥", "🪫", "🪩", "🛠️", "📡",
+    // Techie / Futuristic
+    "🦾",
+    "❤️‍🔥",
+    "🪫",
+    "🪩",
+    "🛠️",
+    "📡",
 
-  // Expression / Vibe
-  "🫠", "🥴", "🫥", "🫨", "🫣", "🥹", "🫡",
+    // Expression / Vibe
+    "🫠",
+    "🥴",
+    "🫥",
+    "🫨",
+    "🫣",
+    "🥹",
+    "🫡",
 
-  // Nature & Rare
-  "🪻", "🪷", "🪹", "🪺", "🦤", "🐉", "🦩",
+    // Nature & Rare
+    "🪻",
+    "🪷",
+    "🪹",
+    "🪺",
+    "🦤",
+    "🐉",
+    "🦩",
 
-  // Travel & Places
-  "🛖", "🏕️", "🗿", "🛤️", "🏜️", "🏔️"
-];
+    // Travel & Places
+    "🛖",
+    "🏕️",
+    "🗿",
+    "🛤️",
+    "🏜️",
+    "🏔️",
+  ];
 
   return (
     <div className="container">
@@ -101,18 +134,17 @@ const App = () => {
                 width: "100%",
                 textAlign: "center",
                 fontFamily: "'Rubik Moonrocks', cursive",
-              transform: `rotate(${rotation * 3.6}deg)`,
-              filter: `
+                transform: `rotate(${rotation * 3.6}deg)`,
+                filter: `
               blur(${Math.max(0, (blur - 50) / 10)}px)
               contrast(${contrast / 50})
               brightness(${brightness / 50})
               saturate(${saturate / 50})
               sepia(${Math.max(0, (sepia - 50) / 50)})
             `,
-              textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
-                dropShadow / 5
-              }px rgba(0, 0, 0, 0.4)`,
-
+                textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
+                  dropShadow / 5
+                }px rgba(0, 0, 0, 0.4)`,
               }}
             >
               {emo}
@@ -174,14 +206,14 @@ const App = () => {
             }
           }}
         >
-          Add 
+          Add
         </button>
         <AddMoreEdit
           label="Font Size"
           value={fontSize}
           onChange={setFontSize}
         />
-        
+
         <button
           className="reset-btn"
           onClick={() => {
@@ -195,15 +227,16 @@ const App = () => {
           Reset
         </button>
       </div>
-      <span><h1>Unique Emojis</h1></span>
+      <span >
+        <h1>Unique Emojis</h1>
+      </span>
       <div className="emojis-container">
-        
         {emojis.map((e, i) => (
           <Emoji key={i} emoji={e} setEmoji={setEmoji} />
         ))}
       </div>
       {/* footer */}
-    <div style={{height:"50px", widows:"100%", backgroundColor:"red", position:"relative",bottom:"0px", marginTop:"50px"}}></div>
+    <div className="footer-container"><Footer /></div>
     </div>
   );
 };

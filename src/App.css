@@ -28,7 +28,7 @@
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:sticky;
+  position:relative;
   top:50px;
   margin: 50px auto;
   border-radius: 20px;
@@ -59,6 +59,7 @@
 h1{
   position:relative;
   text-align:center;
+  padding-top:50px;
 }
 .range {
   height: auto;
@@ -158,4 +159,9 @@ h1{
 .add-more-content button:hover {
   background-color: #6366f1;
   color: white;
+}
+
+.footer-container
+{
+  position:relative;
 }
