@@ -66,7 +66,7 @@ h1{
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:fixed;
+  position:absolute;
   margin: auto;
   border-radius: 20px;
   display: flex;
@@ -82,9 +82,9 @@ h1{
   height: auto;
   min-width: fit-content;
   width: fit-content;
-  position:fixed;
+  position:absolute;
   right:25px;
-  top:25px;
+  top:2px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@ h1{
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:fixed;
+  position:absolute;
   margin: auto;
   border-radius: 20px;
   display: flex;

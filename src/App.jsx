@@ -5,6 +5,8 @@ import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import AddMoreEdit from "./AddMoreEdit.jsx";
+import Footer from "./Footer.jsx";
+
 const App = () => {
   const [emoji, setEmoji] = useState("");
   const [range, setRange] = useState(50);
@@ -200,6 +202,8 @@ const App = () => {
           <Emoji key={i} emoji={e} setEmoji={setEmoji} />
         ))}
       </div>
+      {/* footer */}
+    <div style={{height:"50px", widows:"100%", backgroundColor:"red", position:"relative",bottom:"0px", marginTop:"50px"}}></div>
     </div>
   );
 };
