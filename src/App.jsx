@@ -4,8 +4,9 @@ import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
+import AddMoreEdit from "./AddMoreEdit.jsx";
 const App = () => {
-  const [emoji, setEmoji] = useState("❤️‍🔥");
+  const [emoji, setEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -18,6 +19,8 @@ const App = () => {
   //new emoji
   const [newEmoji, setNewEmoji] = useState("");
   const [overlayEmoji, setOverlayEmoji] = useState([]);
+  //add more eits state
+  const [fontSize, setFontSize] = useState(50);
 
   const captureRef = useRef();
 
@@ -81,36 +84,52 @@ const App = () => {
       </div>
 
       <div className="main-emoji">
-        <div 
+        <div
           ref={captureRef}
           style={{
-            fontSize: `${range * 2}px`,
-            fontFamily: "'Rubik Moonrocks', cursive",
-            transform: `rotate(${rotation * 3.6}deg)`,
-            filter: `
+            position: "relative",
+            height: "auto",
+            minWidth: "200px",
+            minHeight: "200px",
+            width: "fit-content",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span
+            style={{
+              zIndex: 1,
+              fontSize: `${range * 2}px`,
+              fontFamily: "'Rubik Moonrocks', cursive",
+              transform: `rotate(${rotation * 3.6}deg)`,
+              filter: `
               blur(${Math.max(0, (blur - 50) / 10)}px)
               contrast(${contrast / 50})
               brightness(${brightness / 50})
               saturate(${saturate / 50})
               sepia(${Math.max(0, (sepia - 50) / 50)})
             `,
-            textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
-              dropShadow / 5
-            }px rgba(0, 0, 0, 0.4)`,
-            position: "relative",
-            borderRadius: "20px",
-          }}
-        >
-          <span style={{ zIndex: 1 }}>{emoji}</span>
+              textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
+                dropShadow / 5
+              }px rgba(0, 0, 0, 0.4)`,
+
+              borderRadius: "20px",
+            }}
+          >
+            {emoji}
+          </span>
+
           {overlayEmoji.map((emo, i) => (
             <span
               key={i}
               style={{
-                position:"absolute",
-                top: `${10 + i * 10}px`,
-                left: `0px`,
-                fontSize: "45px",
                 zIndex: 2,
+                fontSize: `${fontSize}px`,
+                marginTop: "10px",
+                display: "block",
+                width: "100%",
+                textAlign: "center",
               }}
             >
               {emo}
@@ -137,7 +156,7 @@ const App = () => {
           className="reset-btn"
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
-              setEmoji("")
+              setEmoji("");
               setBlur(0);
               setRange(50);
               setBrightness(50);
@@ -168,12 +187,17 @@ const App = () => {
           onClick={() => {
             if (newEmoji.trim()) {
               setOverlayEmoji([...overlayEmoji, newEmoji]);
-                setNewEmoji("");
+              setNewEmoji("");
             }
           }}
         >
           Add Emoji
         </button>
+        <AddMoreEdit
+          label="Font Size"
+          value={fontSize}
+          onChange={setFontSize}
+        />
       </div>
       <div className="emojis-container">
         {emojis.map((e, i) => (
