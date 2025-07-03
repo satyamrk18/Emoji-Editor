@@ -212,6 +212,17 @@ const App = () => {
           value={fontSize}
           onChange={setFontSize}
         />
+        
+        <button
+          className="reset-btn"
+          onClick={() => {
+            if (confirm("Do you want to Reset?")) {
+              setFontSize(25);
+            }
+          }}
+        >
+          Reset
+        </button>
       </div>
       <div className="emojis-container">
         {emojis.map((e, i) => (
