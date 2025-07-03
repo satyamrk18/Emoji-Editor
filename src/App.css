@@ -28,7 +28,8 @@
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position: relative;
+  position:sticky;
+  top:50px;
   margin: 50px auto;
   border-radius: 20px;
   display: flex;
@@ -53,16 +54,19 @@
   margin: auto;
   bottom: 0px;
   padding: 10px;
-  overflow-x: hidden;
+ overflow-x: hidden; 
 }
-
+h1{
+  position:relative;
+  text-align:center;
+}
 .range {
   height: auto;
   width: 400px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position: absolute;
+  position:fixed;
   margin: auto;
   border-radius: 20px;
   display: flex;
@@ -78,13 +82,14 @@
   height: auto;
   min-width: fit-content;
   width: fit-content;
-  position: relative;
+  position:fixed;
+  right:25px;
+  top:25px;
   z-index: 1;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
 }
 .reset-btn {
   width: 120px;
@@ -109,7 +114,7 @@
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position: absolute;
+  position:fixed;
   margin: auto;
   border-radius: 20px;
   display: flex;
@@ -119,7 +124,7 @@
   font-size: 18px;
   flex-wrap: wrap;
   right: 10px;
-  top: 30px;
+  top:100px;
   gap: 10px;
   padding:25px 0px;
 }
