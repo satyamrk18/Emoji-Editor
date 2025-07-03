@@ -22,6 +22,7 @@ const App = () => {
   const [overlayEmoji, setOverlayEmoji] = useState([]);
   //add more eits state
   const [fontSize, setFontSize] = useState(25);
+  const [bold, setBold] = useState(40);
 
   const captureRef = useRef();
 
@@ -145,6 +146,7 @@ const App = () => {
                 textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
                   dropShadow / 5
                 }px rgba(0, 0, 0, 0.4)`,
+                fontWeight:`${bold * 10}`
               }}
             >
               {emo}
@@ -203,17 +205,14 @@ const App = () => {
             if (newEmoji.trim()) {
               setOverlayEmoji([...overlayEmoji, newEmoji]);
               setNewEmoji("");
+              setBold(40);
             }
           }}
         >
           Add
         </button>
-        <AddMoreEdit
-          label="Font Size"
-          value={fontSize}
-          onChange={setFontSize}
-        />
-
+        <AddMoreEdit label="Font Size" value={fontSize} onChange={setFontSize}/>
+        <AddMoreEdit label="Boldness" value={bold} onChange={setBold}/>
         <button
           className="reset-btn"
           onClick={() => {
