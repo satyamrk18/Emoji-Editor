@@ -22,9 +22,9 @@
 }
 .main-emoji {
   height: auto;
-  width:fit-content;
-  min-width:200px;
-  min-height:200px;
+  width: fit-content;
+  min-width: 200px;
+  min-height: 200px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
@@ -34,10 +34,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align:center;
+  text-align: center;
 }
 .emojis-container {
-  height: auto;
+  height: 235px;
   min-width: 500px;
   width: 500px;
   background-color: #6365f161;
@@ -53,6 +53,7 @@
   margin: auto;
   bottom: 0px;
   padding: 10px;
+  overflow-x: hidden;
 }
 
 .range {
@@ -73,18 +74,17 @@
   left: 10px;
   top: 15px;
 }
-.download
-{
-   height: auto;
-   min-width:fit-content;
- width:fit-content;
+.download {
+  height: auto;
+  min-width: fit-content;
+  width: fit-content;
   position: relative;
   z-index: 1;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .reset-btn {
   width: 120px;
@@ -103,9 +103,8 @@
   background-color: #6366f1;
   color: white;
 }
-.add-more-content
-{
-  height:90vh;
+.add-more-content {
+  height:auto;
   width: 400px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
@@ -116,10 +115,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: raw;
   font-size: 18px;
   flex-wrap: wrap;
-  right:10px;
-  top:30px;
+  right: 10px;
+  top: 30px;
+  gap: 10px;
+  padding:25px 0px;
 }
-
+.add-more-content input {
+  height: 25px;
+  background-color: #d8d9f998;
+  border:2px solid #6366f1;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:600;
+}
+.add-more-content input::placeholder
+{
+  font-size:14px;
+  font-weight:400;
+  color:rgba(0, 0, 0, 0.555);
+}
+.add-more-content button {
+  width: 100px;
+  border: 2px solid #6366f1;
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #d8d9f998;
+  color: #6365f1de;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all ease-in-out 0.1s;
+}
+.add-more-content button:hover {
+  background-color: #6366f1;
+  color: white;
+}

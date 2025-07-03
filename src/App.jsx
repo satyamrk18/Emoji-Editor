@@ -20,7 +20,7 @@ const App = () => {
   const [newEmoji, setNewEmoji] = useState("");
   const [overlayEmoji, setOverlayEmoji] = useState([]);
   //add more eits state
-  const [fontSize, setFontSize] = useState(50);
+  const [fontSize, setFontSize] = useState(25);
 
   const captureRef = useRef();
 
@@ -75,6 +75,7 @@ const App = () => {
     "📷",
     "🎤",
     "😤",
+    
   ];
   return (
     <div className="container">
@@ -125,11 +126,24 @@ const App = () => {
               key={i}
               style={{
                 zIndex: 2,
-                fontSize: `${fontSize}px`,
+                fontSize: `${fontSize * 2}px`,
                 marginTop: "10px",
                 display: "block",
                 width: "100%",
                 textAlign: "center",
+                fontFamily: "'Rubik Moonrocks', cursive",
+              transform: `rotate(${rotation * 3.6}deg)`,
+              filter: `
+              blur(${Math.max(0, (blur - 50) / 10)}px)
+              contrast(${contrast / 50})
+              brightness(${brightness / 50})
+              saturate(${saturate / 50})
+              sepia(${Math.max(0, (sepia - 50) / 50)})
+            `,
+              textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
+                dropShadow / 5
+              }px rgba(0, 0, 0, 0.4)`,
+
               }}
             >
               {emo}
@@ -191,7 +205,7 @@ const App = () => {
             }
           }}
         >
-          Add Emoji
+          Add 
         </button>
         <AddMoreEdit
           label="Font Size"
