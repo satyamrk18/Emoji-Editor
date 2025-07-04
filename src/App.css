@@ -21,15 +21,15 @@
   margin: 25px auto;
 }
 .main-emoji {
-  height:fit-content;
+  height: fit-content;
   width: fit-content;
-  min-width:fit-content;
+  min-width: fit-content;
   min-height: 200px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:relative;
-  top:50px;
+  position: relative;
+  top: 50px;
   margin: 50px auto;
   border-radius: 20px;
   display: flex;
@@ -54,12 +54,12 @@
   margin: auto;
   bottom: 0px;
   padding: 10px;
- overflow-x: hidden; 
+  overflow-x: hidden;
 }
-h1{
-  position:relative;
-  text-align:center;
-  padding-top:50px;
+h1 {
+  position: relative;
+  text-align: center;
+  padding-top: 50px;
 }
 .range {
   height: auto;
@@ -67,7 +67,7 @@ h1{
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:absolute;
+  position: absolute;
   margin: auto;
   border-radius: 20px;
   display: flex;
@@ -83,14 +83,14 @@ h1{
   height: auto;
   min-width: fit-content;
   width: fit-content;
-  position:absolute;
-  right:25px;
-  top:2px;
+  position: absolute;
+  right: 25px;
+  top: 2px;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 }
 .reset-btn {
   width: 120px;
@@ -110,12 +110,12 @@ h1{
   color: white;
 }
 .add-more-content {
-  height:auto;
+  height: auto;
   width: 400px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;
   z-index: 1;
-  position:absolute;
+  position: absolute;
   margin: auto;
   border-radius: 20px;
   display: flex;
@@ -125,23 +125,22 @@ h1{
   font-size: 18px;
   flex-wrap: wrap;
   right: 10px;
-  top:100px;
+  top: 70px;
   gap: 10px;
-  padding:25px 0px;
+  padding: 25px 0px;
 }
 .add-more-content input {
   height: 25px;
   background-color: #d8d9f998;
-  border:2px solid #6366f1;
-  border-radius:10px;
-  font-size:18px;
-  font-weight:600;
+  border: 2px solid #6366f1;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }
-.add-more-content input::placeholder
-{
-  font-size:14px;
-  font-weight:400;
-  color:rgba(0, 0, 0, 0.555);
+.add-more-content input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.555);
 }
 .add-more-content button {
   width: 100px;
@@ -160,8 +159,37 @@ h1{
   background-color: #6366f1;
   color: white;
 }
-
-.footer-container
-{
-  position:relative;
+.font-color {
+  position: absolute;
+  right: 50px;
+  bottom: 80px;
+  height: 100px;
+  width: 250px;
+  height: auto;
+  background-color: red;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  gap:5px;
+  background-color: #d8d9f998;
+  border:1px solid #6366f1;
+  border-radius: 20px;
+  padding:20px;
+}
+.font-color label {
+  font-size: 25px;
+  font-weight: 600;
+  color:#6366f1;
+}
+.font-color input{
+  height:50px;
+  width:100px;
+  border-radius:20px;
+  border:2px double white;
+  outline:2px solid #6366f1;
+}
+.footer-container {
+  position: relative;
 }

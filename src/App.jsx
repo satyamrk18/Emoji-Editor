@@ -24,6 +24,7 @@ const App = () => {
   const [fontSize, setFontSize] = useState(25);
   const [bold, setBold] = useState(40);
   const [rotateFont, setRotateFont] = useState(0);
+  const [color, setColor] = useState("6365f1de");
   const captureRef = useRef();
 
   const emojis = [
@@ -146,7 +147,8 @@ const App = () => {
                 textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
                   dropShadow / 5
                 }px rgba(0, 0, 0, 0.4)`,
-                fontWeight:`${bold * 10}`,
+                fontWeight: `${bold * 10}`,
+                color: `${color}`,
               }}
             >
               {emo}
@@ -212,9 +214,19 @@ const App = () => {
         >
           Add
         </button>
-        <AddMoreEdit label="Font Size" value={fontSize} onChange={setFontSize}/>
-        <AddMoreEdit label="Boldness" value={bold} onChange={setBold}/>
-        <AddMoreEdit label="Rotate" value={rotateFont} onChange={setRotateFont}/>
+        <AddMoreEdit
+          label="Font Size"
+          value={fontSize}
+          onChange={setFontSize}
+        />
+        <AddMoreEdit label="Boldness" value={bold} onChange={setBold} />
+        <AddMoreEdit
+          label="Rotate"
+          value={rotateFont}
+          onChange={setRotateFont}
+        />
+
+
         <button
           className="reset-btn"
           onClick={() => {
@@ -228,7 +240,21 @@ const App = () => {
           Reset
         </button>
       </div>
-      <span >
+
+      {/* font color */}
+      <div className="font-color">
+     
+          <label><spna><h3>Font Color</h3></spna></label>
+          <input
+            type="color"
+            value={color}
+            onChange={(e) => {
+              setColor(e.target.value);
+            }}
+          />
+      
+      </div>
+      <span>
         <h1>Unique Emojis</h1>
       </span>
       <div className="emojis-container">
@@ -237,7 +263,9 @@ const App = () => {
         ))}
       </div>
       {/* footer */}
-    <div className="footer-container"><Footer /></div>
+      <div className="footer-container">
+        <Footer />
+      </div>
     </div>
   );
 };
