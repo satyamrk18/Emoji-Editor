@@ -21,9 +21,9 @@
   margin: 25px auto;
 }
 .main-emoji {
-  height: auto;
+  height:fit-content;
   width: fit-content;
-  min-width: 200px;
+  min-width:fit-content;
   min-height: 200px;
   background-color: #d8d9f998;
   border: 1px solid #6366f1;

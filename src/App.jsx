@@ -23,7 +23,7 @@ const App = () => {
   //add more eits state
   const [fontSize, setFontSize] = useState(25);
   const [bold, setBold] = useState(40);
-
+  const [rotateFont, setRotateFont] = useState(0);
   const captureRef = useRef();
 
   const emojis = [
@@ -129,13 +129,13 @@ const App = () => {
               key={i}
               style={{
                 zIndex: 2,
-                fontSize: `${fontSize * 2}px`,
+                fontSize: `${fontSize / 2}px`,
                 marginTop: "10px",
                 display: "block",
                 width: "100%",
                 textAlign: "center",
                 fontFamily: "'Rubik Moonrocks', cursive",
-                transform: `rotate(${rotation * 3.6}deg)`,
+                transform: `rotate(${rotateFont * 1.8}deg)`,
                 filter: `
               blur(${Math.max(0, (blur - 50) / 10)}px)
               contrast(${contrast / 50})
@@ -146,7 +146,7 @@ const App = () => {
                 textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
                   dropShadow / 5
                 }px rgba(0, 0, 0, 0.4)`,
-                fontWeight:`${bold * 10}`
+                fontWeight:`${bold * 10}`,
               }}
             >
               {emo}
@@ -206,6 +206,7 @@ const App = () => {
               setOverlayEmoji([...overlayEmoji, newEmoji]);
               setNewEmoji("");
               setBold(40);
+              setRotateFont(0);
             }
           }}
         >
@@ -213,6 +214,7 @@ const App = () => {
         </button>
         <AddMoreEdit label="Font Size" value={fontSize} onChange={setFontSize}/>
         <AddMoreEdit label="Boldness" value={bold} onChange={setBold}/>
+        <AddMoreEdit label="Rotate" value={rotateFont} onChange={setRotateFont}/>
         <button
           className="reset-btn"
           onClick={() => {
