@@ -42,14 +42,18 @@
   width: fit-content;
   position: relative;
   margin: 90px auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 .add-emoji input {
   border: none;
   background-color: #d8d9f998;
-  border: 1px solid #6366f1;
+  border: 2px solid #6366f1;
   height: auto;
   padding: 10px;
   border-radius: 10px;
+  height: 20px;
 }
 
 .emojis-container {
@@ -67,14 +71,15 @@
   justify-content: center;
   gap: 10px;
   margin: auto;
-  bottom: 0px;
+  bottom: 20px;
   padding: 10px;
   overflow-x: hidden;
-  scrollbar-width:none;
+  scrollbar-width: none;
 }
 h1 {
   position: relative;
   text-align: center;
+  padding: 10px;
 }
 .range {
   height: auto;
@@ -90,7 +95,7 @@ h1 {
   justify-content: center;
   font-size: 18px;
   flex-wrap: wrap;
-  left: 10px;
+  left: 35px;
   top: 70px;
   gap: 10px;
   padding: 25px 0px;
@@ -139,7 +144,7 @@ h1 {
   justify-content: center;
   font-size: 18px;
   flex-wrap: wrap;
-  right: 10px;
+  right: 35px;
   top: 70px;
   gap: 10px;
   padding: 25px 0px;

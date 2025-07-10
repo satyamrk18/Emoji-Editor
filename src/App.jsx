@@ -181,10 +181,12 @@ const App = () => {
           type="text"
           name="emoji"
           placeholder="Add Emoji"
+          value={emoji}
           onChange={(e) => {
             setEmoji(e.target.value);
           }}
         />
+        <button className="reset-btn" onClick={()=>{setEmoji(emoji);}}>Add</button>
       </div>
       <span>
         <h1>Unique Emojis</h1>
