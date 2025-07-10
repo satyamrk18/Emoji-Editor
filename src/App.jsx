@@ -189,7 +189,7 @@ const App = () => {
         <button className="reset-btn" onClick={()=>{setEmoji(emoji);}}>Add</button>
       </div>
       <span>
-        <h1>Unique Emojis</h1>
+        <h2 className="emoji-heading">Unique Emojis</h2>
       </span>
       <div className="emojis-container">
         {emojis.map((e, i) => (
