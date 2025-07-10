@@ -37,9 +37,24 @@
   justify-content: center;
   text-align: center;
 }
+.add-emoji {
+  z-index: 1;
+  width: fit-content;
+  position: relative;
+  margin: 90px auto;
+}
+.add-emoji input {
+  border: none;
+  background-color: #d8d9f998;
+  border: 1px solid #6366f1;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .emojis-container {
   height: 235px;
-  min-width: 500px;
+  min-width: 700px;
   width: 500px;
   background-color: #6365f161;
   border: 2px solid #6366f1;
@@ -55,11 +70,11 @@
   bottom: 0px;
   padding: 10px;
   overflow-x: hidden;
+  scrollbar-width:none;
 }
 h1 {
   position: relative;
   text-align: center;
-  padding-top: 50px;
 }
 .range {
   height: auto;
@@ -170,25 +185,25 @@ h1 {
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
   background-color: #d8d9f998;
-  border:1px solid #6366f1;
+  border: 1px solid #6366f1;
   border-radius: 20px;
-  padding:20px;
+  padding: 20px;
 }
 .font-color label {
   font-size: 25px;
   font-weight: 600;
-  color:#6366f1;
+  color: #6366f1;
 }
-.font-color input{
-  height:50px;
-  width:100px;
-  border-radius:20px;
-  border:2px double white;
-  outline:2px solid #6366f1;
+.font-color input {
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  border: 2px double white;
+  outline: 2px solid #6366f1;
 }
 .footer-container {
   position: relative;

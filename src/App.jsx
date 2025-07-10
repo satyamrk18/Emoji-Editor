@@ -1,5 +1,5 @@
 import "./App.css";
-import {useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
@@ -16,61 +16,71 @@ const App = () => {
   const [saturate, setSaturate] = useState(50);
   const [sepia, setSepia] = useState(50);
 
-
   const emojis = [
-    // Aesthetic / Magical
-    "🪄",
-    "🔮",
-    "🧿",
-    "🪬",
-    "🧚",
-    "🧝",
-    "🦄",
-
-    // Weird / Nerdy / Fun
-    "🦷",
-    "🫀",
-    "🧠",
-    "🧬",
-    "🪙",
-    "🛸",
-    "🧪",
-
-    // Techie / Futuristic
-    "🦾",
     "❤️‍🔥",
-    "🪫",
-    "🪩",
-    "🛠️",
+    "♥️",
+    "💝",
+    "❤️‍🩹",
+    "🫀",
+    "🫰",
+    "🫶",
+    "💌",
+    "💞",
+    "🫂",
+
+    "🧿",
+    "🕉️",
+    "☢️",
+    "☯️",
+    "🔱",
+    "✡️",
+    "🪬",
+    "🔯",
+    "☮️",
+    "🛐",
+
+    "🧠",
+    "🧪",
+    "🧬",
+    "🦠",
+    "🧫",
+    "🧲",
+    "🧯",
+    "🧰",
     "📡",
+    "🛸",
 
-    // Expression / Vibe
-    "🫠",
-    "🥴",
-    "🫥",
-    "🫨",
-    "🫣",
-    "🥹",
-    "🫡",
 
-    // Nature & Rare
-    "🪻",
-    "🪷",
-    "🪹",
-    "🪺",
-    "🦤",
+    "🦄",
+    "🪼",
+    "🦋",
     "🐉",
-    "🦩",
+    "🦤",
+    "🪲",
+    "🪳",
+    "🦭",
+    "🦞",
+    "🦎",
 
-    // Travel & Places
-    "🛖",
-    "🏕️",
+    "👶🏻",
+    "👩🏻‍🦰",
+    "🧔🏻‍♀️",
+    "👼🏻",
+    "🧙‍♂️",
+    "🧝‍♀️",
+    "🧚",
+    "🧞",
+    "🧜",
+    "🧟",
     "🗿",
-    "🛤️",
-    "🏜️",
-    "🏔️",
+    "🪩",
+    "🪖",
+    "🪇",
+    "🧿",
+    "🪃",
   ];
-const captureRef = useRef(null);
+
+  const captureRef = useRef(null);
 
   return (
     <div className="container">
@@ -132,7 +142,6 @@ const captureRef = useRef(null);
           className="reset-btn"
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
-              setEmoji("");
               setBlur(0);
               setRange(50);
               setBrightness(50);
@@ -149,7 +158,7 @@ const captureRef = useRef(null);
       </div>
 
       <div className="add-more-content">
-       <Edit label="Contrast" value={contrast} onChange={setContrast} />
+        <Edit label="Contrast" value={contrast} onChange={setContrast} />
         <Edit label="Brightness" value={brightness} onChange={setBrightness} />
         <Edit label="Saturation" value={saturate} onChange={setSaturate} />
         <Edit label="Sepia" value={sepia} onChange={setSepia} />
@@ -157,12 +166,25 @@ const captureRef = useRef(null);
           className="reset-btn"
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
-  
+              setBrightness(50);
+              setContrast(50);
+              setSaturate(50);
+              setSepia(50);
             }
           }}
         >
           Reset
         </button>
+      </div>
+      <div className="add-emoji">
+        <input
+          type="text"
+          name="emoji"
+          placeholder="Add Emoji"
+          onChange={(e) => {
+            setEmoji(e.target.value);
+          }}
+        />
       </div>
       <span>
         <h1>Unique Emojis</h1>
