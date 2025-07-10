@@ -1,12 +1,12 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 const App = () => {
-  const [emoji, setEmoji] = useState("❤️‍🔥");
+  const [emoji, setEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -15,7 +15,7 @@ const App = () => {
   const [brightness, setBrightness] = useState(50);
   const [saturate, setSaturate] = useState(50);
   const [sepia, setSepia] = useState(50);
-
+  const [error, setError] = useState("");
   const emojis = [
     "❤️‍🔥",
     "♥️",
@@ -50,7 +50,6 @@ const App = () => {
     "📡",
     "🛸",
 
-
     "🦄",
     "🪼",
     "🦋",
@@ -81,6 +80,16 @@ const App = () => {
   ];
 
   const captureRef = useRef(null);
+  useEffect(() => {
+    if (emoji.length == 1) {
+      setError("");
+    } else if (emoji.length > 1) {
+      setError("Emoji Must Contain Single Character ");
+      setEmoji("❤️‍🩹");
+    } else {
+      setError("");
+    }
+  }, [emoji]);
 
   return (
     <div className="container">
@@ -181,13 +190,20 @@ const App = () => {
           type="text"
           name="emoji"
           placeholder="Add Emoji"
-          value={emoji}
           onChange={(e) => {
             setEmoji(e.target.value);
           }}
         />
-        <button className="reset-btn" onClick={()=>{setEmoji(emoji);}}>Add</button>
+        <button
+          className="reset-btn"
+          onClick={() => {
+            setEmoji(emoji);
+          }}
+        >
+          Add
+        </button>
       </div>
+      <h3 className="error-msg">{error}</h3>
       <span>
         <h2 className="emoji-heading">Unique Emojis</h2>
       </span>
