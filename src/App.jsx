@@ -6,7 +6,7 @@ import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 const App = () => {
-  const [emoji, setEmoji] = useState("");
+  const [emoji, setEmoji] = useState("❤️‍🔥");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -80,12 +80,14 @@ const App = () => {
   ];
 
   const captureRef = useRef(null);
+
   useEffect(() => {
-    if (emoji.length == 1) {
+    const emojiUnits = Array.from(emoji);
+    if (emojiUnits.length === 1) {
       setError("");
-    } else if (emoji.length > 1) {
-      setError("Emoji Must Contain Single Character ");
-      setEmoji("❤️‍🩹");
+    } else if (emojiUnits.length > 1) {
+      setEmoji(emojiUnits[0]); //keep only the 1st emoji
+      setError("Emoji Must Contain Single Character");
     } else {
       setError("");
     }
@@ -194,14 +196,7 @@ const App = () => {
             setEmoji(e.target.value);
           }}
         />
-        <button
-          className="reset-btn"
-          onClick={() => {
-            setEmoji(emoji);
-          }}
-        >
-          Add
-        </button>
+        <button className="reset-btn">Add</button>
       </div>
       <h3 className="error-msg">{error}</h3>
       <span>
