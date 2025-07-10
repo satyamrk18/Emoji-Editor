@@ -5,6 +5,7 @@ import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
+
 const App = () => {
   const [emoji, setEmoji] = useState("❤️‍🔥");
   const [range, setRange] = useState(50);
@@ -16,67 +17,14 @@ const App = () => {
   const [saturate, setSaturate] = useState(50);
   const [sepia, setSepia] = useState(50);
   const [error, setError] = useState("");
+
   const emojis = [
-    "❤️‍🔥",
-    "♥️",
-    "💝",
-    "❤️‍🩹",
-    "🫀",
-    "🫰",
-    "🫶",
-    "💌",
-    "💞",
-    "🫂",
-
-    "🧿",
-    "🕉️",
-    "☢️",
-    "☯️",
-    "🔱",
-    "✡️",
-    "🪬",
-    "🔯",
-    "☮️",
-    "🛐",
-
-    "🧠",
-    "🧪",
-    "🧬",
-    "🦠",
-    "🧫",
-    "🧲",
-    "🧯",
-    "🧰",
-    "📡",
-    "🛸",
-
-    "🦄",
-    "🪼",
-    "🦋",
-    "🐉",
-    "🦤",
-    "🪲",
-    "🪳",
-    "🦭",
-    "🦞",
-    "🦎",
-
-    "👶🏻",
-    "👩🏻‍🦰",
-    "🧔🏻‍♀️",
-    "👼🏻",
-    "🧙‍♂️",
-    "🧝‍♀️",
-    "🧚",
-    "🧞",
-    "🧜",
-    "🧟",
-    "🗿",
-    "🪩",
-    "🪖",
-    "🪇",
-    "🧿",
-    "🪃",
+    "❤️‍🔥", "♥️", "💝", "❤️‍🩹", "🫀", "🫰", "🫶", "💌", "💞", "🫂",
+    "🧿", "🕉️", "☢️", "☯️", "🔱", "✡️", "🪬", "🔯", "☮️", "🛐",
+    "🧠", "🧪", "🧬", "🦠", "🧫", "🧲", "🧯", "🧰", "📡", "🛸",
+    "🦄", "🪼", "🦋", "🐉", "🦤", "🪲", "🪳", "🦭", "🦞", "🦎",
+    "👶🏻", "👩🏻‍🦰", "🧔🏻‍♀️", "👼🏻", "🧙‍♂️", "🧝‍♀️", "🧚", "🧞", "🧜", "🧟",
+    "🗿", "🪩", "🪖", "🪇", "🧿", "🪃",
   ];
 
   const captureRef = useRef(null);
@@ -86,8 +34,8 @@ const App = () => {
     if (emojiUnits.length === 1) {
       setError("");
     } else if (emojiUnits.length > 1) {
-      setEmoji(emojiUnits[0]); //keep only the 1st emoji
-      setError("Emoji Must Contain Single Character");
+      setEmoji(emojiUnits[0]); // Keep only the first full emoji unit
+      setError("Emoji must contain only one character");
     } else {
       setError("");
     }
@@ -121,16 +69,15 @@ const App = () => {
               fontFamily: "'Rubik Moonrocks', cursive",
               transform: `rotate(${rotation * 3.6}deg)`,
               filter: `
-              blur(${Math.max(0, (blur - 50) / 10)}px)
-              contrast(${contrast / 50})
-              brightness(${brightness / 50})
-              saturate(${saturate / 50})
-              sepia(${Math.max(0, (sepia - 50) / 50)})
-            `,
+                blur(${Math.max(0, (blur - 50) / 10)}px)
+                contrast(${contrast / 50})
+                brightness(${brightness / 50})
+                saturate(${saturate / 50})
+                sepia(${Math.max(0, (sepia - 50) / 50)})
+              `,
               textShadow: `${dropShadow / 5}px ${dropShadow / 5}px ${
                 dropShadow / 5
               }px rgba(0, 0, 0, 0.4)`,
-
               borderRadius: "20px",
             }}
           >
@@ -138,8 +85,8 @@ const App = () => {
           </span>
         </div>
       </div>
+
       <div className="download">
-        {" "}
         <DownloadButton targetRef={captureRef} />
       </div>
 
@@ -148,7 +95,6 @@ const App = () => {
         <Edit label="Shadow" value={dropShadow} onChange={setdropShadow} />
         <Edit label="Blur" value={blur} onChange={setBlur} />
         <Edit label="Rotate" value={rotation} onChange={setRotation} />
-
         <button
           className="reset-btn"
           onClick={() => {
@@ -187,6 +133,7 @@ const App = () => {
           Reset
         </button>
       </div>
+
       <div className="add-emoji">
         <input
           type="text"
@@ -198,16 +145,19 @@ const App = () => {
         />
         <button className="reset-btn">Add</button>
       </div>
+
       <h3 className="error-msg">{error}</h3>
+
       <span>
         <h2 className="emoji-heading">Unique Emojis</h2>
       </span>
+
       <div className="emojis-container">
         {emojis.map((e, i) => (
           <Emoji key={i} emoji={e} setEmoji={setEmoji} />
         ))}
       </div>
-      {/* footer */}
+
       <div className="footer-container">
         <Footer />
       </div>
