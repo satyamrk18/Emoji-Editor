@@ -8,6 +8,7 @@ import Footer from "./Footer.jsx";
 
 const App = () => {
   const [emoji, setEmoji] = useState("❤️‍🔥");
+  const [inputEmoji, setInputEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
   const [dropShadow, setdropShadow] = useState(0);
@@ -18,28 +19,81 @@ const App = () => {
   const [sepia, setSepia] = useState(50);
   const [error, setError] = useState("");
 
+  const handleinput = () => {
+    const units = Array.from(inputEmoji);
+    setInputEmoji("");
+    if (units.length > 1) {
+      setEmoji(inputEmoji);
+      setError("");
+    } else if (units.length > 20) {
+      setError("only one Emoji is Allowed");
+    } else if (inputEmoji.length == 0) {
+      setError("");
+    } else {
+      setError("please emter a emoji");
+    }
+  };
+
   const emojis = [
-    "❤️‍🔥", "♥️", "💝", "❤️‍🩹", "🫀", "🫰", "🫶", "💌", "💞", "🫂",
-    "🧿", "🕉️", "☢️", "☯️", "🔱", "✡️", "🪬", "🔯", "☮️", "🛐",
-    "🧠", "🧪", "🧬", "🦠", "🧫", "🧲", "🧯", "🧰", "📡", "🛸",
-    "🦄", "🪼", "🦋", "🐉", "🦤", "🪲", "🪳", "🦭", "🦞", "🦎",
-    "👶🏻", "👩🏻‍🦰", "🧔🏻‍♀️", "👼🏻", "🧙‍♂️", "🧝‍♀️", "🧚", "🧞", "🧜", "🧟",
-    "🗿", "🪩", "🪖", "🪇", "🧿", "🪃",
+    "❤️‍🔥",
+    "♥️",
+    "💝",
+    "❤️‍🩹",
+    "🫀",
+    "🫰",
+    "🫶",
+    "💌",
+    "💞",
+    "🫂",
+    "🧿",
+    "🕉️",
+    "☢️",
+    "☯️",
+    "🔱",
+    "✡️",
+    "🪬",
+    "🔯",
+    "☮️",
+    "🛐",
+    "🧠",
+    "🧪",
+    "🧬",
+    "🦠",
+    "🧫",
+    "🧲",
+    "🧯",
+    "🧰",
+    "📡",
+    "🛸",
+    "🦄",
+    "🪼",
+    "🦋",
+    "🐉",
+    "🦤",
+    "🪲",
+    "🪳",
+    "🦭",
+    "🦞",
+    "🦎",
+    "👶🏻",
+    "👩🏻‍🦰",
+    "🧔🏻‍♀️",
+    "👼🏻",
+    "🧙‍♂️",
+    "🧝‍♀️",
+    "🧚",
+    "🧞",
+    "🧜",
+    "🧟",
+    "🗿",
+    "🪩",
+    "🪖",
+    "🪇",
+    "🧿",
+    "🪃",
   ];
 
   const captureRef = useRef(null);
-
-  useEffect(() => {
-    const emojiUnits = Array.from(emoji);
-    if (emojiUnits.length === 1) {
-      setError("");
-    } else if (emojiUnits.length > 1) {
-      setEmoji(emojiUnits[0]); // Keep only the first full emoji unit
-      setError("Emoji must contain only one character");
-    } else {
-      setError("");
-    }
-  }, [emoji]);
 
   return (
     <div className="container">
@@ -139,11 +193,14 @@ const App = () => {
           type="text"
           name="emoji"
           placeholder="Add Emoji"
+          value={inputEmoji}
           onChange={(e) => {
-            setEmoji(e.target.value);
+            setInputEmoji(e.target.value);
           }}
         />
-        <button className="reset-btn">Add</button>
+        <button className="reset-btn" onClick={handleinput}>
+          Add
+        </button>
       </div>
 
       <h3 className="error-msg">{error}</h3>
