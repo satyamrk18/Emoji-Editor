@@ -144,7 +144,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="gradient-background" />
-      <div className="logo">logo</div>
+      <div className="logo"><h1>Mojify</h1></div>
       <div className="content">
         <Heading />
       </div>

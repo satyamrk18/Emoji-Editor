@@ -4,7 +4,7 @@ const Heading = () => {
   return (
     <div>
        <h1 className="heading typewriter">
-          Add Your Favarate <span>Emoji</span> To <span>Edit</span>
+          Add Your favourite <span>Emoji</span> To <span>Edit</span>
         </h1>
     </div>
   )

@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, MailPlus } from "lucide-react";
+import { Github, Linkedin, MailPlus,CircleParking  } from "lucide-react";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -18,6 +18,7 @@ const Footer = () => {
         <a href="mailto:satyamrk18@gmail.com?subject=Hello%20Satyam&body=This%20is%20a%20test%20mail%20from%20my%20app" target="new">
           <MailPlus />
         </a>
+        <a href="https://peerlist.io/satyamrk18" target="new"><CircleParking  /></a>
       </div>
     </div>
   );
