@@ -6,6 +6,7 @@ import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 
+
 const App = () => {
   const [emoji, setEmoji] = useState(<Heading />);
   const [inputEmoji, setInputEmoji] = useState("");
@@ -19,38 +20,47 @@ const App = () => {
   const [sepia, setSepia] = useState(50);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const emojiUnits = Array.from(emoji);
-    if (emojiUnits.length > 2 && rotation !== 0) {
-      setRotation(0);
-    }
-  }, [emoji]);
+  function checkchar(str) {
+    const alphabet = [
+      ..."abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    ];
+    const number = [..."0123456789"];
+    const symbol = [..."`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?"];
+    const space = [" "];
 
-  const trimmedInput = inputEmoji.trim();
-  const units = Array.from(trimmedInput);
-  const length = units.length;
-  const handleinput = () => {
-    setInputEmoji("");
-    if (length === 0) {
-      setError("Please enter a emojis or character");
-    } else if (length > 30) {
-      setError("only 30 chnaracter or emoji is Allowed");
-      setEmoji("");
-    } else {
-      setEmoji(trimmedInput);
-      setError("");
-      setInputEmoji("");
+    for (let char of str) {
+      if (
+        alphabet.includes(char) ||
+        number.includes(char) ||
+        symbol.includes(char) ||
+        space.includes(char)
+      ) {
+        return true;
+      }
     }
-  };
-  const handlerotation = (value) => {
-    const units = Array.from(emoji);
-    if (units.length > 2) {
-      setRotation(0);
-      alert("Rotation is not allowed if more than 2 characters");
+    return false;
+  }
+
+  const handleinput = () => {
+    const trimmed = inputEmoji.trim();
+    const units = Array.from(trimmed);
+    const length = units.length;
+
+    if (length === 0) {
+      setError("Please enter emoji");
       return;
     }
-    setRotation(value);
+
+    if (checkchar(trimmed)) {
+      alert("Alphabets, symbols, numbers, or spaces are not allowed.");
+       setInputEmoji("");
+      return;
+    }
+    setEmoji(trimmed);
+    setError("");
+    setInputEmoji("");
   };
+
   const emojis = [
     "❤️‍🔥",
     "♥️",
@@ -169,7 +179,7 @@ const App = () => {
         <Edit label="Size" value={range} onChange={setRange} />
         <Edit label="Shadow" value={dropShadow} onChange={setdropShadow} />
         <Edit label="Blur" value={blur} onChange={setBlur} />
-        <Edit label="Rotate" value={rotation} onChange={handlerotation} />
+        <Edit label="Rotate" value={rotation} onChange={setRotation} />
         <button
           className="reset-btn"
           onClick={() => {
@@ -215,10 +225,9 @@ const App = () => {
           name="emoji"
           placeholder="Add Emoji"
           value={inputEmoji}
-          onChange={(e) => {
-            setInputEmoji(e.target.value);
-          }}
+         onChange={(e) => setInputEmoji(e.target.value)}
         />
+
         <button className="reset-btn" onClick={handleinput}>
           Add
         </button>
