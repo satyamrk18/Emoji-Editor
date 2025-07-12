@@ -5,7 +5,7 @@ import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
-
+import { RefreshCw, HeartPlus } from "lucide-react";
 
 const App = () => {
   const [emoji, setEmoji] = useState("❤️‍🔥");
@@ -53,7 +53,7 @@ const App = () => {
 
     if (checkchar(trimmed)) {
       alert("Alphabets, symbols, numbers, or spaces are not allowed.");
-       setInputEmoji("");
+      setInputEmoji("");
       return;
     }
     setEmoji(trimmed);
@@ -122,6 +122,21 @@ const App = () => {
     "🫎",
     "🔥",
     "😶‍🌫️",
+    "🌈",
+    "👽",
+    "🪐",
+    "🎭",
+    "🎨",
+    "🧊",
+    "🌌",
+    "🌋",
+    "🎆",
+    "🎇",
+    "🎰",
+    "🎮",
+    "🕹️",
+    "🔮",
+    "💫",
   ];
 
   const captureRef = useRef(null);
@@ -195,7 +210,7 @@ const App = () => {
             }
           }}
         >
-          Reset
+          Reset <RefreshCw />
         </button>
       </div>
 
@@ -215,7 +230,7 @@ const App = () => {
             }
           }}
         >
-          Reset
+          Reset <RefreshCw />
         </button>
       </div>
 
@@ -225,11 +240,11 @@ const App = () => {
           name="emoji"
           placeholder="Add Emoji"
           value={inputEmoji}
-         onChange={(e) => setInputEmoji(e.target.value)}
+          onChange={(e) => setInputEmoji(e.target.value)}
         />
 
         <button className="reset-btn" onClick={handleinput}>
-          Add
+          Add <HeartPlus />
         </button>
       </div>
 
@@ -244,8 +259,7 @@ const App = () => {
           <Emoji key={i} emoji={e} setEmoji={setEmoji} />
         ))}
       </div>
-
-      <div className="footer-container">
+      <div className="main-footer">
         <Footer />
       </div>
     </div>

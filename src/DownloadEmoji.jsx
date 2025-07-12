@@ -1,6 +1,6 @@
 import domtoimage from "dom-to-image-more";
 import "./DownloadEmoji.css"
-
+import { ImageDown } from 'lucide-react';
 const DownloadButton = ({ targetRef }) => {
   const downloadImage = async () => {
     const node = targetRef.current;
@@ -34,7 +34,7 @@ const DownloadButton = ({ targetRef }) => {
       });
   };
 
-  return <button className="download-btn" onClick={downloadImage}>Download</button>;
+  return <button className="download-btn" onClick={downloadImage}>Download<ImageDown /></button>;
 };
 
 export default DownloadButton;

@@ -1,20 +1,24 @@
-.download-btn
-{ 
-  position:relative;
-  z-index:1;
-  margin:0 auto;
-  border:2px solid #6366f1;
-  padding:10px;
-  border-radius:20px;
-  font-size:16px;
-  font-weight:600;
+.download-btn {
+  position: relative;
+  height: auto;
+  width: 150px;
+  z-index: 1;
+  margin: 0 auto;
+  border: 2px solid #6366f1;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
   background-color: #d8d9f998;
-  color:#6365f1de;
+  color: #6365f1de;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.download-btn:hover
-{
- background-color: #6366f1;
-  color:white;
-}  
+
+.download-btn:hover {
+  background-color: #6366f1;
+  color: white;
+}
