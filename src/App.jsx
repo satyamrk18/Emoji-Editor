@@ -7,7 +7,7 @@ import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 
 const App = () => {
-  const [emoji, setEmoji] = useState(  <Heading />);
+  const [emoji, setEmoji] = useState(<Heading />);
   const [inputEmoji, setInputEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
@@ -19,9 +19,11 @@ const App = () => {
   const [sepia, setSepia] = useState(50);
   const [error, setError] = useState("");
 
-  const handleinput = () => {
-    const units = Array.from(inputEmoji);
-    const length = units.length;
+ const handleinput = () => {
+   const trimmedInput = inputEmoji.trim();
+  const units = Array.from(trimmedInput);          
+  const length = units.length;
+
     setInputEmoji("");
     if (length === 0) {
       setError("Please enter a emojis or character");
@@ -29,11 +31,12 @@ const App = () => {
       setError("only 30 chnaracter or emoji is Allowed");
       setEmoji("");
     } else {
-      setEmoji(inputEmoji);
-      setError("")
-      setInputEmoji("")
+      setEmoji(trimmedInput);
+      setError("");
+      setInputEmoji("");
     }
   };
+
 
   const emojis = [
     "❤️‍🔥",
@@ -122,7 +125,9 @@ const App = () => {
               zIndex: 1,
               fontSize: `${range * 2}px`,
               fontFamily: "'Rubik Moonrocks', cursive",
-              transform: `rotate(${rotation * 3.6}deg)`,
+              transform: `rotate(${
+                length > 10 ? rotation * 3.6 : (rotation * 3.6) / 10
+              }deg)`,
               filter: `
                 blur(${Math.max(0, (blur - 50) / 10)}px)
                 contrast(${contrast / 50})

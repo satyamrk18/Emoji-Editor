@@ -21,28 +21,34 @@
   margin: 25px auto;
 }
 .main-emoji {
-  height: fit-content;
-  width: fit-content;
-  min-width: fit-content;
-  min-height: 200px;
+  min-width: 100px;
+  min-height: fit-content;
+  max-width: fit-content;
   background-color: #d8d9f998;
-  border: 1px solid #6366f1;  
+  border: 1px solid #6366f1;
   z-index: 1;
   position: relative;
-  top:35px;
+  top: 35px;
   margin: 50px auto;
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  padding: 5px;
   text-align: center;
-  padding:5px;
 }
+.main-emoji span {
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  background-color:transparent;
+}
+
 .add-emoji {
   z-index: 1;
   width: fit-content;
   position: relative;
-  margin:70px auto;
+  margin: 70px auto;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -59,8 +65,8 @@
 
 .emojis-container {
   height: 235px;
-  min-width:500px;
-  width:400px;
+  min-width: 500px;
+  width: 400px;
   background-color: #6365f161;
   border: 2px solid #6366f1;
   border-radius: 15px;
@@ -72,7 +78,7 @@
   justify-content: center;
   gap: 10px;
   margin: auto;
-  bottom:20px;
+  bottom: 20px;
   padding: 10px;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -81,13 +87,13 @@
   position: relative;
   text-align: center;
   padding: 10px;
-  background-color:white;
-  width:fit-content;
-  margin:0 auto;
-  margin-bottom:30px;
-  border-radius:30px;
+  background-color: white;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.365);
-  border:1px solid rgba(128, 128, 128, 0.445);
+  border: 1px solid rgba(128, 128, 128, 0.445);
 }
 .range {
   height: auto;
@@ -104,7 +110,7 @@
   font-size: 18px;
   flex-wrap: wrap;
   left: 35px;
-  bottom:100px;
+  bottom: 100px;
   gap: 10px;
   padding: 25px 0px;
 }
@@ -153,7 +159,7 @@
   font-size: 18px;
   flex-wrap: wrap;
   right: 35px;
- bottom:100px;
+  bottom: 100px;
   gap: 10px;
   padding: 25px 0px;
 }
@@ -206,12 +212,10 @@
   border-radius: 20px;
   padding: 20px;
 }
-.error-msg
-{
-  color:red;
-  position:relative;
-  text-align:center;
-
+.error-msg {
+  color: red;
+  position: relative;
+  text-align: center;
 }
 .font-color label {
   font-size: 25px;
