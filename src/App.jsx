@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
@@ -19,11 +19,17 @@ const App = () => {
   const [sepia, setSepia] = useState(50);
   const [error, setError] = useState("");
 
- const handleinput = () => {
-   const trimmedInput = inputEmoji.trim();
-  const units = Array.from(trimmedInput);          
-  const length = units.length;
+  useEffect(() => {
+    const emojiUnits = Array.from(emoji);
+    if (emojiUnits.length > 2 && rotation !== 0) {
+      setRotation(0);
+    }
+  }, [emoji]);
 
+  const trimmedInput = inputEmoji.trim();
+  const units = Array.from(trimmedInput);
+  const length = units.length;
+  const handleinput = () => {
     setInputEmoji("");
     if (length === 0) {
       setError("Please enter a emojis or character");
@@ -36,8 +42,15 @@ const App = () => {
       setInputEmoji("");
     }
   };
-
-
+  const handlerotation = (value) => {
+    const units = Array.from(emoji);
+    if (units.length > 2) {
+      setRotation(0);
+      alert("Rotation is not allowed if more than 2 characters");
+      return;
+    }
+    setRotation(value);
+  };
   const emojis = [
     "❤️‍🔥",
     "♥️",
@@ -95,6 +108,10 @@ const App = () => {
     "🪇",
     "🧿",
     "🪃",
+    "🚁",
+    "🫎",
+    "🔥",
+    "😶‍🌫️",
   ];
 
   const captureRef = useRef(null);
@@ -111,7 +128,7 @@ const App = () => {
           ref={captureRef}
           style={{
             position: "relative",
-            height: "auto",
+            height: `auto`,
             minWidth: "200px",
             minHeight: "200px",
             width: "fit-content",
@@ -125,9 +142,7 @@ const App = () => {
               zIndex: 1,
               fontSize: `${range * 2}px`,
               fontFamily: "'Rubik Moonrocks', cursive",
-              transform: `rotate(${
-                length > 10 ? rotation * 3.6 : (rotation * 3.6) / 10
-              }deg)`,
+              transform: `rotate(${rotation * 3.6}deg)`,
               filter: `
                 blur(${Math.max(0, (blur - 50) / 10)}px)
                 contrast(${contrast / 50})
@@ -154,7 +169,7 @@ const App = () => {
         <Edit label="Size" value={range} onChange={setRange} />
         <Edit label="Shadow" value={dropShadow} onChange={setdropShadow} />
         <Edit label="Blur" value={blur} onChange={setBlur} />
-        <Edit label="Rotate" value={rotation} onChange={setRotation} />
+        <Edit label="Rotate" value={rotation} onChange={handlerotation} />
         <button
           className="reset-btn"
           onClick={() => {
