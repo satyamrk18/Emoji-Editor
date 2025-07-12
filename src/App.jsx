@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Emoji from "./EmojiButton.jsx";
 import Edit from "./Edit.jsx";
 import DownloadButton from "./DownloadEmoji.jsx";
@@ -7,7 +7,7 @@ import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 
 const App = () => {
-  const [emoji, setEmoji] = useState("❤️‍🔥");
+  const [emoji, setEmoji] = useState(  <Heading />);
   const [inputEmoji, setInputEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
@@ -21,16 +21,17 @@ const App = () => {
 
   const handleinput = () => {
     const units = Array.from(inputEmoji);
+    const length = units.length;
     setInputEmoji("");
-    if (units.length > 1) {
-      setEmoji(inputEmoji);
-      setError("");
-    } else if (units.length > 20) {
-      setError("only one Emoji is Allowed");
-    } else if (inputEmoji.length == 0) {
-      setError("");
+    if (length === 0) {
+      setError("Please enter a emojis or character");
+    } else if (length > 30) {
+      setError("only 30 chnaracter or emoji is Allowed");
+      setEmoji("");
     } else {
-      setError("please emter a emoji");
+      setEmoji(inputEmoji);
+      setError("")
+      setInputEmoji("")
     }
   };
 
