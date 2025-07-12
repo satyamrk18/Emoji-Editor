@@ -6,6 +6,7 @@ import DownloadButton from "./DownloadEmoji.jsx";
 import Heading from "./Heading.jsx";
 import Footer from "./Footer.jsx";
 import { RefreshCw, HeartPlus } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 const App = () => {
   const [emoji, setEmoji] = useState("❤️‍🔥");
@@ -18,7 +19,6 @@ const App = () => {
   const [brightness, setBrightness] = useState(50);
   const [saturate, setSaturate] = useState(50);
   const [sepia, setSepia] = useState(50);
-  const [error, setError] = useState("");
 
   function checkchar(str) {
     const alphabet = [
@@ -47,17 +47,17 @@ const App = () => {
     const length = units.length;
 
     if (length === 0) {
-      setError("Please enter emoji");
+      toast.error("Please enter emoji", { duration: 3000 });
       return;
     }
 
     if (checkchar(trimmed)) {
-      alert("Alphabets, symbols, numbers, or spaces are not allowed.");
+      toast.error("Alphabets, symbols, numbers, or spaces are not allowed.");
       setInputEmoji("");
       return;
     }
     setEmoji(trimmed);
-    setError("");
+    toast.error("");
     setInputEmoji("");
   };
 
@@ -144,6 +144,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="gradient-background" />
+      <div className="logo">logo</div>
       <div className="content">
         <Heading />
       </div>
@@ -199,6 +200,7 @@ const App = () => {
           className="reset-btn"
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
+              const toastId = toast.loading("Resetting...");
               setBlur(0);
               setRange(50);
               setBrightness(50);
@@ -207,6 +209,11 @@ const App = () => {
               setSaturate(50);
               setSepia(50);
               setdropShadow(0);
+
+              setTimeout(() => {
+                toast.dismiss(toastId);
+                toast.success("Reset Successful!");
+              }, 1000);
             }
           }}
         >
@@ -223,10 +230,20 @@ const App = () => {
           className="reset-btn"
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
+              const toastId = toast.loading("Resetting...");
+              setBlur(0);
+              setRange(50);
               setBrightness(50);
               setContrast(50);
+              setRotation(0);
               setSaturate(50);
               setSepia(50);
+              setdropShadow(0);
+
+              setTimeout(() => {
+                toast.dismiss(toastId);
+                toast.success("Reset Successful!");
+              }, 1000);
             }
           }}
         >
@@ -247,9 +264,6 @@ const App = () => {
           Add <HeartPlus />
         </button>
       </div>
-
-      <h3 className="error-msg">{error}</h3>
-
       <span>
         <h2 className="emoji-heading">Unique Emojis</h2>
       </span>
@@ -262,6 +276,7 @@ const App = () => {
       <div className="main-footer">
         <Footer />
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
