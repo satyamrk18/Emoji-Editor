@@ -8,7 +8,7 @@ import Footer from "./Footer.jsx";
 
 
 const App = () => {
-  const [emoji, setEmoji] = useState(<Heading />);
+  const [emoji, setEmoji] = useState("❤️‍🔥");
   const [inputEmoji, setInputEmoji] = useState("");
   const [range, setRange] = useState(50);
   const [blur, setBlur] = useState(0);
