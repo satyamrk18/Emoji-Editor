@@ -35,3 +35,37 @@ span
 {
   color: #6366f1;
 }
+
+@media screen and (max-width: 359px) {
+  .heading {
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  .heading {
+    font-size: 22px;
+  }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    font-size: 32px;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .heading {
+    font-size: 40px;
+  }
+}
