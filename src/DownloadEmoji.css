@@ -22,3 +22,42 @@
   background-color: #6366f1;
   color: white;
 }
+
+
+@media screen and (max-width: 359px) {
+ .download-btn
+ {
+  width:120px;
+  font-size:14px;
+  height:40px;
+ }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  .download-btn
+ {
+  width:120px;
+  font-size:14px;
+  height:40px;
+ }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    font-size: 32px;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  
+}

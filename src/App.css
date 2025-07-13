@@ -39,7 +39,6 @@
   background-clip: text;
 }
 .main-emoji {
-  min-width: 100px;
   min-height: fit-content;
   max-width: fit-content;
   background-color: #d8d9f998;
@@ -83,7 +82,6 @@
 
 .emojis-container {
   height: 200px;
-  min-width: 500px;
   width: 70%;
   background-color: #6365f161;
   border: 2px solid #6366f1;
@@ -157,10 +155,10 @@
   cursor: pointer;
   margin-bottom: 10px;
   transition: all ease-in-out 0.1s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .reset-btn:hover {
   background-color: #6366f1;
@@ -261,10 +259,61 @@
   padding-bottom: 20px;
 }
 
-/* for mobile */
-@media screen and(max-width:359px) {
-   .range
+/* ✅ Responsive font sizes for different screen widths */
+
+/* Extra small devices (phones, < 360px) */
+@media screen and (max-width: 359px) {
+
+  .main-emoji
+  {
+    height:100px;
+    top:-30px;
+  }
+  .range {
+    width:100%;
+    background-color:red;
+    gap:0px;
+    top:500px;
+    right:0px;
+  }
+  .add-emoji
+  {
+    margin-top:-50px;
+    height:40px;
+  }
+   .add-emoji button
    {
     width:100px;
    }
+   .add-emoji input{
+        height:5px;
+   }
+  .download {
+    top:25px;
+    right:10px;
+    height: 20px;
+    font-size: 5px;
+  }
+}
+
+/* Small devices (phones, 360px–479px) */
+@media screen and (min-width: 360px) and (max-width: 479px) {
+   .download {
+    top:25px;
+    right:10px;
+    height: 20px;
+    font-size: 5px;
+  }
+}
+
+/* Medium devices (large phones, tablets in portrait, 480px–767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+/* Large devices (tablets in landscape, small laptops, 768px–1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Extra large devices (desktops, > 1024px) */
+@media screen and (min-width: 1024px) {
 }
