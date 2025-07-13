@@ -157,6 +157,10 @@
   cursor: pointer;
   margin-bottom: 10px;
   transition: all ease-in-out 0.1s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
 }
 .reset-btn:hover {
   background-color: #6366f1;
