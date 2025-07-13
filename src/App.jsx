@@ -57,7 +57,7 @@ const App = () => {
       return;
     }
     setEmoji(trimmed);
-    toast.error("");
+    toast.success(`${emoji} Added Successfully !`);
     setInputEmoji("");
   };
 
