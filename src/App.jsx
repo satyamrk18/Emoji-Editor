@@ -47,10 +47,15 @@ const App = () => {
     const length = units.length;
 
     if (length === 0) {
-      toast.error("Please enter emoji", { duration: 3000 });
+      toast.error("Please enter emoji.", { duration: 3000 });
       return;
     }
-
+ if(length > 1)
+ {
+  toast.error("Only one emoji is allowed at a time.",{duration:3000});
+ setInputEmoji("")
+  return;
+ }
     if (checkchar(trimmed)) {
       toast.error("Alphabets, symbols, numbers, or spaces are not allowed.");
       setInputEmoji("");
