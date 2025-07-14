@@ -174,7 +174,7 @@ const App = () => {
         <input
           type="text"
           name="emoji"
-          placeholder="Add Emoji"
+          placeholder="Add More Emoji"
           value={inputEmoji}
           onChange={(e) => setInputEmoji(e.target.value)}
         />
