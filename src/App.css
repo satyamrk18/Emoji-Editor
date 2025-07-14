@@ -255,7 +255,6 @@
   padding-bottom: 20px;
 }
 
-/* ✅ Responsive font sizes for different screen widths */
 
 /* Extra small devices (phones, < 360px) */
 @media screen and (max-width: 359px) {
@@ -315,7 +314,7 @@
 }
 
 /* Small devices (phones, 360px–479px) */
-@media screen and (min-width: 360px) and (max-width: 479px) {
+@media screen and (min-width: 360px) and (max-width: 767px) {
   
   .main-emoji {
     height: 100px;
@@ -323,7 +322,7 @@
   }
   .range {
     width: 95%;
-    left: 7px;
+    left: 20px;
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
@@ -336,7 +335,7 @@
 }
   .add-more-content {
    width: 95%;
-    left: 7px;
+    left:20px;
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
@@ -372,14 +371,18 @@
   }
 }
 
-/* Medium devices (large phones, tablets in portrait, 480px–767px) */
-@media screen and (min-width: 480px) and (max-width: 767px) {
-}
+
 
 /* Large devices (tablets in landscape, small laptops, 768px–1023px) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-}
-
-/* Extra large devices (desktops, > 1024px) */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .range
+  {
+    width:300px;
+    left:5px;
+  }
+  .add-more-content
+  {
+    width:300px;
+    right:5px;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./EditContainer.css"
+import toast from 'react-hot-toast'
 
 const Size = ({ label, value, onChange }) => {
   return (
