@@ -255,7 +255,6 @@
   padding-bottom: 20px;
 }
 
-
 /* Extra small devices (phones, < 360px) */
 @media screen and (max-width: 359px) {
   .main-emoji {
@@ -268,21 +267,19 @@
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
-    bottom:350px;
+    bottom: 350px;
   }
-.reset-btn
-{
-  height:35px;
-  width: 100px;
-}
+  .reset-btn {
+    height: 35px;
+    width: 100px;
+  }
   .add-more-content {
-   width: 95%;
+    width: 95%;
     left: 7px;
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
-    bottom:-130px;
-
+    bottom: -130px;
   }
   .add-emoji {
     margin-top: -50px;
@@ -309,38 +306,35 @@
     height: 170px;
   }
   .main-footer {
-    margin-top:470px;
+    margin-top: 470px;
   }
 }
 
 /* Small devices (phones, 360px–479px) */
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  
   .main-emoji {
     height: 100px;
     top: -30px;
   }
   .range {
     width: 95%;
-    left: 20px;
+    left: 15px;
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
-    bottom:350px;
+    bottom: 350px;
   }
-.reset-btn
-{
-  height:35px;
-  width: 100px;
-}
+  .reset-btn {
+    height: 35px;
+    width: 100px;
+  }
   .add-more-content {
-   width: 95%;
-    left:20px;
+    width: 95%;
+    left: 15px;
     gap: 0px;
     padding: 0px 0px;
     height: fit-content;
-    bottom:-130px;
-
+    bottom: -130px;
   }
   .add-emoji {
     margin-top: -50px;
@@ -350,7 +344,7 @@
     width: 100px;
   }
   .add-emoji input {
-    height:16px;
+    height: 16px;
   }
   .download {
     top: 25px;
@@ -367,22 +361,18 @@
     height: 170px;
   }
   .main-footer {
-    margin-top:470px;
+    margin-top: 470px;
   }
 }
 
-
-
 /* Large devices (tablets in landscape, small laptops, 768px–1023px) */
 @media screen and (min-width: 768px) and (max-width: 1200px) {
-  .range
-  {
-    width:300px;
-    left:5px;
+  .range {
+    width: 300px;
+    left: 5px;
   }
-  .add-more-content
-  {
-    width:300px;
-    right:5px;
+  .add-more-content {
+    width: 300px;
+    right: 5px;
   }
 }

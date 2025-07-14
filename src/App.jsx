@@ -131,13 +131,8 @@ const App = () => {
               const toastId = toast.loading("Resetting...");
               setBlur(0);
               setRange(50);
-              setBrightness(50);
-              setContrast(50);
               setRotation(0);
-              setSaturate(50);
-              setSepia(50);
               setdropShadow(0);
-
               setTimeout(() => {
                 toast.dismiss(toastId);
                 toast.success("Reset Successful!");
@@ -159,14 +154,10 @@ const App = () => {
           onClick={() => {
             if (confirm("Do you want to Reset?")) {
               const toastId = toast.loading("Resetting...");
-              setBlur(0);
-              setRange(50);
               setBrightness(50);
               setContrast(50);
-              setRotation(0);
               setSaturate(50);
               setSepia(50);
-              setdropShadow(0);
 
               setTimeout(() => {
                 toast.dismiss(toastId);
