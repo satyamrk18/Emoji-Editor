@@ -232,11 +232,7 @@
   border-radius: 20px;
   padding: 20px;
 }
-.error-msg {
-  color: red;
-  position: relative;
-  text-align: center;
-}
+
 .font-color label {
   font-size: 25px;
   font-weight: 600;
@@ -263,44 +259,66 @@
 
 /* Extra small devices (phones, < 360px) */
 @media screen and (max-width: 359px) {
-
-  .main-emoji
-  {
-    height:100px;
-    top:-30px;
+  .main-emoji {
+    height: 100px;
+    top: -30px;
   }
   .range {
-    width:100%;
-    background-color:red;
-    gap:0px;
-    top:500px;
-    right:0px;
+    width: 95%;
+    left: 7px;
+    gap: 0px;
+    padding: 0px 0px;
+    height: fit-content;
+    bottom:350px;
   }
-  .add-emoji
-  {
-    margin-top:-50px;
-    height:40px;
+.reset-btn
+{
+  height:35px;
+  width: 100px;
+}
+  .add-more-content {
+   width: 95%;
+    left: 7px;
+    gap: 0px;
+    padding: 0px 0px;
+    height: fit-content;
+    bottom:-130px;
+
   }
-   .add-emoji button
-   {
-    width:100px;
-   }
-   .add-emoji input{
-        height:5px;
-   }
+  .add-emoji {
+    margin-top: -50px;
+    height: 40px;
+  }
+  .add-emoji button {
+    width: 100px;
+  }
+  .add-emoji input {
+    height: 5px;
+  }
   .download {
-    top:25px;
-    right:10px;
+    top: 25px;
+    right: 10px;
     height: 20px;
     font-size: 5px;
+  }
+  .emoji-heading {
+    top: 450px;
+  }
+  .emojis-container {
+    bottom: -450px;
+    width: 90%;
+    height: 170px;
+  }
+  .main-footer {
+    margin-top:470px;
   }
 }
 
 /* Small devices (phones, 360px–479px) */
 @media screen and (min-width: 360px) and (max-width: 479px) {
-   .download {
-    top:25px;
-    right:10px;
+  .download {
+    top: 25px;
+    right: 10px;
     height: 20px;
     font-size: 5px;
   }

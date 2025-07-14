@@ -18,3 +18,8 @@ a{
 h3{
     color:rgba(0, 0, 0, 0.514);
 }
+@media screen and (max-width: 359px) {
+   .Footer{
+     width:90%;
+   }
+}
