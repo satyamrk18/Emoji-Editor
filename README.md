@@ -1,12 +1,36 @@
-# React + Vite
+# 🛠️ Modify — Emoji Editor App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Website Badge](https://img.shields.io/badge/Live-Visit%20Now-brightgreen?style=for-the-badge&logo=vercel&link=https://emoji-editor-wa1s.vercel.app/)
+![Tech Badge](https://img.shields.io/badge/Built%20With-React-blue?style=for-the-badge&logo=react)
 
-Currently, two official plugins are available:
+A modern, interactive emoji editor that lets you select, customize, and download emojis with ease. Whether you're creating social media graphics, stickers, or just having fun, **Modify** gives you the tools to make your emojis truly expressive!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Live Site:** [emoji-editor-wa1s.vercel.app](https://emoji-editor-wa1s.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- 🎨 Select and customize emojis from a categorized emoji set
+- ✏️ Edit emoji appearance (size, position, rotate, etc.)
+- 💾 Download customized emojis as images
+- 🔄 Reset emojis with a confirmation toast
+- 🧠 Smart UI with toast notifications and minimal interactions
+- 📱 Responsive design for both desktop and mobile
+
+---
+
+## 🖥️ Screenshots
+
+<img src="https://emoji-editor-wa1s.vercel.app/preview.png" alt="Modify App Screenshot" width="600"/>
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/emoji-editor.git
+   cd emoji-editor
