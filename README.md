@@ -1,9 +1,9 @@
-# 🛠️ Modify — Emoji Editor App
+# 🛠️ Mojify — Emoji Editor App
 
 ![Website Badge](https://img.shields.io/badge/Live-Visit%20Now-brightgreen?style=for-the-badge&logo=vercel&link=https://emoji-editor-wa1s.vercel.app/)
 ![Tech Badge](https://img.shields.io/badge/Built%20With-React-blue?style=for-the-badge&logo=react)
 
-A modern, interactive emoji editor that lets you select, customize, and download emojis with ease. Whether you're designing content for social media, building 3D-ready assets, or just having fun, **Modify** empowers you to bring emojis to life!
+A modern, interactive emoji editor that lets you select, customize, and download emojis with ease. Whether you're designing content for social media, building 3D-ready assets, or just having fun, **Mojify** empowers you to bring emojis to life!
 
 🔗 **Live Site:** [emoji-editor-wa1s.vercel.app](https://emoji-editor-wa1s.vercel.app/)
 
@@ -22,10 +22,10 @@ A modern, interactive emoji editor that lets you select, customize, and download
 
 ## 🖼️ Screenshots
 
-<img src="./src/assets/desktop.png" alt="Modify App Screenshot" width="600"/>
-<img src="./src/assets/mobile-1.png" alt="Modify App Screenshot" width="600"/>
-<img src="./src/assets/mobile-2.png" alt="Modify App Screenshot" width="600"/>
-<img src="./src/assets/mobile-3.png" alt="Modify App Screenshot" width="600"/>
+<img src="./src/assets/desktop.png" alt="Mojify App Screenshot" width="600"/>
+<img src="./src/assets/mobile-1.png" alt="Mojify App Screenshot" width="600"/>
+<img src="./src/assets/mobile-2.png" alt="Mojify App Screenshot" width="600"/>
+<img src="./src/assets/mobile-3.png" alt="Mojify App Screenshot" width="600"/>
 
 ---
 
